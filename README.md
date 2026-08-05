@@ -34,62 +34,43 @@ The dataset includes:
 
 ---
 
-## Analysis Questions
+## Core Analysis Questions
 
-### 1. What are the top 5 complaint types in NYC?
+### 1. What are the top 10 most frequent complaint types in NYC?
+Identifies the most common issues reported by residents (e.g., Noise, Heating, Street Conditions) to understand where city services face the highest operational demand.
 
-This question looks at the most common problems reported by residents, such as heating issues, plumbing problems, noise complaints, street light failures, or sanitation issues.
+### 2. Which city agencies receive the highest volume of service requests?
+Evaluates the workload distribution across different city departments (e.g., NYPD, HPD, DOT) to identify which organizations require the most operational support and funding.
 
-The goal is to understand which complaint categories create the highest demand for city services.
+### 3. Which borough generates the highest number of complaints?
+Compares request distribution across Brooklyn, Bronx, Manhattan, Queens, and Staten Island to identify macro-level geographic hotspots that require broader attention.
 
----
+### 4. Which specific ZIP codes generate the highest number of requests?
+Drills down into neighborhood-level data to pinpoint exact micro-locations where city infrastructure or services are failing most frequently.
 
-### 2. Which borough has the highest number of service requests?
+### 5. How have complaint volumes changed over time, and are they seasonal?
+Analyzes monthly trends to determine if specific complaints spike during certain times of the year (e.g., heating in winter), allowing for proactive resource allocation.
 
-This question compares service request volume across NYC boroughs, such as Brooklyn, the Bronx, Manhattan, Queens, and Staten Island.
+### 6. What is the average resolution time for each major complaint type?
+Measures operational efficiency by tracking how long it takes different departments to close tickets, highlighting bottlenecks in the city's repair workflow.
 
-The goal is to identify geographic hotspots where residents report more issues and where service capacity may need more attention.
+### 7. Which complaint types have the highest percentage of unresolved cases?
+Identifies systemic failures by looking at the ratio of open/pending tickets versus closed tickets, revealing which issues the city struggles to fix permanently.
 
----
-
-### 3. Which complaint type has the longest average resolution time?
-
-This question measures how long it takes for different complaint types to move from created date to closed date.
-
-The goal is to find which issues are slower to resolve and may require better processes, more staff, or clearer ownership.
-
----
-
-### 4. Which agency has the highest number of open or pending requests?
-
-This question checks which agencies currently have the largest backlog of unresolved service requests.
-
-The goal is to identify operational pressure points and understand where follow-up or additional resources may be needed.
+### 8. What operational recommendations can improve service performance?
+Synthesizes the data findings into actionable business strategies for city management to optimize staffing, adjust Service Level Agreements (SLAs), and deploy targeted prevention programs.
 
 ---
 
-### 5. Which complaint type is likely to have the highest request volume next month?
+## Business Recommendations
 
-This question uses historical request trends to estimate which complaint category may increase in the near future.
+Based on the data analysis, the following operational strategies are recommended for city management:
 
-The goal is to help service teams prepare in advance for expected demand instead of reacting after requests increase.
-
----
-
-### 6. Which borough should receive priority resource allocation?
-
-This question combines request volume, complaint frequency, and unresolved cases to recommend where the city should focus resources first.
-
-The goal is to support better planning for staffing, maintenance teams, and service operations.
-
----
-
-### 7. What response-time target should be set for the most frequent complaint types?
-
-This question uses past resolution time data to propose realistic service-level targets for common complaint categories.
-
-The goal is to help the city set clear expectations for how quickly different types of issues should be resolved.
-
+1. **Micro-Targeted Resource Allocation:** Deploy specialized maintenance crews and sanitation resources directly to the top 5 highest-volume ZIP codes rather than spreading resources evenly across a whole borough.
+2. **Optimize Departmental Staffing:** Increase shift allocations in agencies handling the top complaint types that currently show the longest average resolution times.
+3. **Address Systemic Unresolved Issues:** Launch root-cause task forces for complaint categories with the highest percentage of open/pending cases to prevent recurring backlog.
+4. **Seasonal Preparedness:** Pre-position equipment and staff ahead of predictable seasonal spikes identified in the monthly trend analysis.
+5. **SLA Adjustments:** Review and adjust Service Level Agreements (SLAs) for complaint categories that consistently exceed their target resolution times to set realistic public expectations.
 ## Expected Outputs
 
 - Top complaint types chart
