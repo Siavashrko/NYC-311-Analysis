@@ -4,6 +4,10 @@
   <img src="visuals/nyc-cover.jpg" alt="New York City skyline" width="1000" />
 </p>
 
+<p align="center">
+  <img src="visuals/nyc-cover.jpg" alt="New York City skyline" width="1000" />
+</p>
+
 A portfolio-ready data analysis project exploring NYC 311 service requests and the operational patterns behind public service demand.
 
 ## Project Summary
