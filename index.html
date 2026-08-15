@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NYC 311 Service Requests Analysis</title>
+  <style>
+    :root {
+      --bg: #071422;
+      --bg-soft: #0d1f2d;
+      --panel: rgba(14, 29, 39, 0.9);
+      --panel-strong: #132c3d;
+      --line: rgba(166, 211, 255, 0.18);
+      --text: #edf7ff;
+      --muted: #b9d1e2;
+      --accent: #67d1ff;
+      --accent-2: #7ef2c1;
+      --gold: #f7d58b;
+      --shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(103, 209, 255, 0.15), transparent 35%),
+        radial-gradient(circle at bottom right, rgba(126, 242, 193, 0.12), transparent 30%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container {
+      width: min(1200px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(10px);
+      background: rgba(7, 20, 34, 0.72);
+      border-bottom: 1px solid var(--line);
+      z-index: 10;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 18px 0;
+    }
+
+    .brand {
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: var(--text);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .hero {
+      padding: 72px 0 42px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 0.9fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent-2);
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    h1 {
+      margin: 0 0 18px;
+      font-size: clamp(2.6rem, 4vw, 4.4rem);
+      line-height: 1.08;
+      letter-spacing: -0.05em;
+    }
+
+    .lead {
+      max-width: 60ch;
+      color: var(--muted);
+      font-size: 1.06rem;
+      margin-bottom: 26px;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--accent), #96c7ff);
+      color: #04141f;
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-weight: 700;
+      box-shadow: var(--shadow);
+    }
+
+    .btn.secondary {
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--text);
+      border: 1px solid var(--line);
+      box-shadow: none;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(120px, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .stat {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px 14px;
+    }
+
+    .stat .value {
+      display: block;
+      font-size: clamp(1.4rem, 2vw, 2rem);
+      font-weight: 800;
+      color: var(--gold);
+    }
+
+    .stat .label {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-top: 6px;
+    }
+
+    .hero-panel {
+      background: linear-gradient(180deg, rgba(17, 35, 50, 0.92), rgba(11, 25, 36, 0.92));
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-panel img {
+      display: block;
+      width: 100%;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: #0b1822;
+    }
+
+    section {
+      padding: 26px 0;
+    }
+
+    .section-header {
+      margin-bottom: 18px;
+    }
+
+    .section-header h2 {
+      margin: 0 0 8px;
+      font-size: clamp(1.7rem, 3vw, 2.5rem);
+      letter-spacing: -0.04em;
+    }
+
+    .section-header p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 68ch;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 22px 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 1.1rem;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+      margin-top: 12px;
+    }
+
+    .image-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .image-card img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .image-card .caption {
+      padding: 16px 18px 18px;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .footer {
+      padding: 32px 0 60px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    @media (max-width: 860px) {
+      .hero-grid, .grid-3, .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .stats {
+        grid-template-columns: repeat(2, minmax(120px, 1fr));
+      }
+
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <div class="brand">NYC 311 • Data Story</div>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#overview">Overview</a>
+        <a href="#insights">Insights</a>
+        <a href="#visuals">Visuals</a>
+        <a href="#notebook">Notebook</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero" id="overview">
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow">Portfolio project</div>
+          <h1>NYC 311 Service Requests Analysis</h1>
+          <p class="lead">
+            A data analysis project that explores complaint demand, workload concentration,
+            borough-level patterns, and resolution behavior using NYC 311 service request data.
+          </p>
+
+          <div class="cta-row">
+            <a class="btn" href="01_audit.ipynb">Open Notebook</a>
+            <a class="btn secondary" href="https://github.com/Siavashrko/NYC-311-Analysis">GitHub Repo</a>
+          </div>
+
+          <div class="stats">
+            <div class="stat">
+              <span class="value">111K</span>
+              <span class="label">Service requests</span>
+            </div>
+            <div class="stat">
+              <span class="value">14</span>
+              <span class="label">Columns</span>
+            </div>
+            <div class="stat">
+              <span class="value">5</span>
+              <span class="label">Boroughs</span>
+            </div>
+            <div class="stat">
+              <span class="value">50+</span>
+              <span class="label">Agencies</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-panel">
+          <img src="visuals/top_complaints.png" alt="Top complaint types chart" />
+        </div>
+      </div>
+    </section>
+
+    <section id="insights">
+      <div class="section-header">
+        <h2>Project focus</h2>
+        <p>
+          This analysis focuses on understanding how service demand is distributed across complaint types,
+          agencies, boroughs, and time periods, while also checking the data quality issues common in public service records.
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <article class="card">
+          <h3>Data audit</h3>
+          <p>Review missing values, duplicate records, invalid date ranges, and weak columns that should be filtered or transformed.</p>
+        </article>
+        <article class="card">
+          <h3>Feature engineering</h3>
+          <p>Create time-aware fields such as month, weekday, and resolution duration to expose operational patterns.</p>
+        </article>
+        <article class="card">
+          <h3>Business interpretation</h3>
+          <p>Translate technical findings into meaningful operational questions and city service recommendations.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="visuals">
+      <div class="section-header">
+        <h2>Visual exploration</h2>
+        <p>The charts below summarize key patterns found in the data and help communicate the story clearly to a technical or business audience.</p>
+      </div>
+
+      <div class="gallery">
+        <div class="image-card">
+          <img src="visuals/borough_complaints.png" alt="Borough complaint counts" />
+          <div class="caption">Complaint concentration by borough</div>
+        </div>
+        <div class="image-card">
+          <img src="visuals/agency_complaints.png" alt="Agency complaint counts" />
+          <div class="caption">Agency workload distribution</div>
+        </div>
+        <div class="image-card">
+          <img src="visuals/resolution_time_distribution.png" alt="Resolution time distribution" />
+          <div class="caption">Resolution time profile</div>
+        </div>
+        <div class="image-card">
+          <img src="visuals/open_vs_closed.png" alt="Open vs closed complaints" />
+          <div class="caption">Open and closed complaint comparison</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="notebook">
+      <div class="section-header">
+        <h2>Analysis workflow</h2>
+        <p>The notebook is organized as a clean reporting workflow: audit, clean, engineer features, analyze patterns, and summarize recommendations.</p>
+      </div>
+
+      <div class="grid-3">
+        <article class="card">
+          <h3>01. Audit</h3>
+          <p>Inspect nulls, inconsistencies, date validity, and low-value columns before modeling or storytelling.</p>
+        </article>
+        <article class="card">
+          <h3>02. Clean</h3>
+          <p>Filter invalid rows, handle open cases, and transform messy fields into a reliable analysis dataset.</p>
+        </article>
+        <article class="card">
+          <h3>03. Explore</h3>
+          <p>Analyze trends across time, borough, complaint type, and agency to find the clearest insights.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      NYC 311 Service Requests Analysis • Portfolio-ready data project
+    </div>
+  </footer>
+</body>
+</html>
