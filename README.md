@@ -1,10 +1,10 @@
 # NYC 311 Service Requests Analysis
 
-A portfolio-ready data analysis project exploring NYC 311 service requests and the operational patterns behind public service demand.
+<p align="center">
+  <img src="visuals/nyc-cover.jpg" alt="New York City skyline" width="1000" />
+</p>
 
-<div align="center">
-  <img src="visuals/top_complaints.png" width="900" alt="Top complaint types" />
-</div>
+A portfolio-ready data analysis project exploring NYC 311 service requests and the operational patterns behind public service demand.
 
 ## Project Summary
 
@@ -129,7 +129,7 @@ To publish it as a GitHub Pages site:
 Your project page will then be available at:
 
 ```text
-https://Siavashrko.github.io/NYC-311-Analysis/
+https://Siavashrk33.github.io/NYC-311-Analysis/
 ```
 
 ---
@@ -139,7 +139,7 @@ https://Siavashrko.github.io/NYC-311-Analysis/
 Clone the project:
 
 ```bash
-git clone https://github.com/Siavashrko/NYC-311-Analysis.git
+git clone https://github.com/Siavashrk33/NYC-311-Analysis.git
 cd NYC-311-Analysis
 ```
 
@@ -168,7 +168,9 @@ These insights can inform more effective resource allocation and service plannin
 
 ## Contact
 
-- GitHub: https://github.com/Siavashrko
+- GitHub: https://github.com/Siavashrk33
+- Instagram: [instagram.com/siavash_rko](https://www.instagram.com/siavash_rko?igsh=anBmcDQ2N3A5NGcz&utm_source=qr)
+- X: [x.com/Siavashrk33](https://x.com/Siavashrk33)
 - Email: siavashrko@gmail.com
 
 ---
