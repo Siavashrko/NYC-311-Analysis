@@ -1,6 +1,5 @@
 # NYC 311 Service Requests Analysis
 
-<img src="visuals/image.jpg"
 
 <p align="center">
   <img src="visuals/nyc-cover.jpg" alt="New York City skyline" width="1000" />
