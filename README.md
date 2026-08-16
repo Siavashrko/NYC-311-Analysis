@@ -68,6 +68,104 @@ These variables allow the analysis to explore where complaints are concentrated,
 
 ---
 
+## Code Highlights
+
+### 1. Load the data
+```python
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+df = pd.read_csv("data/311-service-requests.csv")
+print(f"Dataset shape: {df.shape}")
+```
+
+### 2. Audit missing values
+```python
+missing = df.isnull().sum()
+missing_pct = (missing / len(df)) * 100
+
+missing_df = pd.DataFrame({
+    'Missing Count': missing,
+    'Percentage': missing_pct
+}).sort_values('Missing Count', ascending=False)
+print(missing_df)
+```
+
+### 3. Clean column names and parse dates
+```python
+df.columns = df.columns.str.strip().str.lower().str.replace(' ', '_')
+df['created_date'] = pd.to_datetime(df['created_date'], errors='coerce')
+df['closed_date'] = pd.to_datetime(df['closed_date'], errors='coerce')
+```
+
+### 4. Calculate resolution time and flag bad data
+```python
+df['resolution_days'] = (df['closed_date'] - df['created_date']).dt.days
+df['has_bad_date'] = df['resolution_days'] < 0
+df['is_open'] = df['closed_date'].isnull().astype(int)
+df = df.drop('landmark', axis=1)
+```
+
+### 5. Feature engineering
+```python
+df['created_month'] = df['created_date'].dt.month
+df['created_day_of_week'] = df['created_date'].dt.day_name()
+df['created_hour'] = df['created_date'].dt.hour
+df['is_weekend'] = df['created_day_of_week'].isin(['Saturday', 'Sunday']).astype(int)
+```
+
+### 6. Top complaint types chart
+```python
+top_complaints = df['complaint_type'].value_counts().head(10)
+plt.figure(figsize=(10, 6))
+top_complaints.plot(kind='bar')
+plt.title('Top 10 Complaint Types')
+plt.xticks(rotation=45, ha='right')
+plt.tight_layout()
+plt.savefig("visuals/top_complaints.png", dpi=300, bbox_inches="tight")
+plt.show()
+```
+
+### 7. Borough complaint distribution
+```python
+borough_counts = df['borough'].value_counts()
+plt.figure(figsize=(10, 6))
+borough_counts.plot(kind='bar', color='teal')
+plt.title('Complaint Count by Borough')
+plt.tight_layout()
+plt.savefig("visuals/borough_complaints.png", dpi=300, bbox_inches="tight")
+plt.show()
+```
+
+### 8. Open vs Closed complaints
+```python
+open_closed = pd.Series({
+    'Open': df['closed_date'].isna().sum(),
+    'Closed': df['closed_date'].notna().sum()
+})
+plt.figure(figsize=(8, 6))
+open_closed.plot(kind='bar', color=['#f39c12', '#2ecc71'])
+plt.title('Open vs Closed Complaints')
+plt.tight_layout()
+plt.savefig("visuals/open_vs_closed.png", dpi=300, bbox_inches="tight")
+plt.show()
+```
+
+### 9. Complaint heatmap by borough
+```python
+pivot = pd.crosstab(df['borough'], df['complaint_type']).head(10)
+plt.figure(figsize=(12, 8))
+sns.heatmap(pivot, cmap='YlGnBu')
+plt.title('Complaint Type by Borough')
+plt.xticks(rotation=45, ha='right')
+plt.tight_layout()
+plt.savefig("visuals/borough_complaint_heatmap.png", dpi=300, bbox_inches="tight")
+plt.show()
+```
+
+---
 ## Workflow
 
 1. Load the raw NYC 311 dataset
