@@ -13,166 +13,43 @@
       font-size: 1.05rem;
       line-height: 1.8;
     }
-
-    .page {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 60px 24px 100px;
-    }
-
-    h1 {
-      font-size: 2.4rem;
-      color: #ffffff;
-      margin-bottom: 6px;
-      letter-spacing: -0.03em;
-    }
-
-    .subtitle {
-      color: #7ab3d4;
-      font-size: 1rem;
-      margin-bottom: 40px;
-    }
-
-    .cover {
-      width: 100%;
-      border-radius: 16px;
-      margin-bottom: 48px;
-      border: 1px solid rgba(100,180,255,0.15);
-    }
-
-    h2 {
-      font-size: 1.45rem;
-      color: #67d1ff;
-      border-bottom: 1px solid rgba(100,180,255,0.2);
-      padding-bottom: 8px;
-      margin-top: 56px;
-      margin-bottom: 16px;
-    }
-
-    h3 {
-      font-size: 1.1rem;
-      color: #a8d8f0;
-      margin-top: 32px;
-      margin-bottom: 8px;
-    }
-
-    p {
-      color: #c2daea;
-      margin-bottom: 20px;
-    }
-
-    ul {
-      padding-left: 22px;
-      color: #c2daea;
-    }
-
-    ul li {
-      margin-bottom: 6px;
-    }
-
-    .chart {
-      width: 100%;
-      border-radius: 14px;
-      border: 1px solid rgba(100,180,255,0.12);
-      background: #0d1e2e;
-      margin: 24px 0 10px;
-    }
-
-    .caption {
-      text-align: center;
-      color: #6a9dbf;
-      font-size: 0.88rem;
-      margin-bottom: 32px;
-    }
-
-    pre {
-      background: #071018;
-      border: 1px solid rgba(100,180,255,0.15);
-      border-radius: 12px;
-      padding: 20px;
-      overflow-x: auto;
-      font-size: 0.87rem;
-      line-height: 1.7;
-      color: #b8e0ff;
-      margin: 16px 0 32px;
-    }
-
-    .stat-row {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-      margin: 28px 0 40px;
-    }
-
-    .stat {
-      background: #0f2030;
-      border: 1px solid rgba(100,180,255,0.15);
-      border-radius: 14px;
-      padding: 20px 16px;
-      text-align: center;
-    }
-
-    .stat .val {
-      display: block;
-      font-size: 1.9rem;
-      font-weight: 800;
-      color: #f7d58b;
-    }
-
-    .stat .lbl {
-      display: block;
-      font-size: 0.82rem;
-      color: #7ab3d4;
-      margin-top: 4px;
-    }
-
-    .contact-row {
-      display: flex;
-      gap: 24px;
-      flex-wrap: wrap;
-      margin-top: 16px;
-    }
-
-    .contact-row a {
-      color: #67d1ff;
-      text-decoration: none;
-      font-size: 0.97rem;
-    }
-
-    .contact-row a:hover {
-      text-decoration: underline;
-    }
-
-    footer {
-      margin-top: 80px;
-      border-top: 1px solid rgba(100,180,255,0.12);
-      padding-top: 24px;
-      color: #4a7a99;
-      font-size: 0.88rem;
-      text-align: center;
-    }
-
-    @media (max-width: 600px) {
-      .stat-row { grid-template-columns: repeat(2, 1fr); }
-      h1 { font-size: 1.8rem; }
-    }
+    .page { max-width: 960px; margin: 0 auto; padding: 60px 24px 100px; }
+    h1 { font-size: 2.4rem; color: #ffffff; margin-bottom: 6px; letter-spacing: -0.03em; }
+    .subtitle { color: #7ab3d4; font-size: 1rem; margin-bottom: 40px; }
+    .cover { width: 100%; border-radius: 16px; margin-bottom: 48px; border: 1px solid rgba(100,180,255,0.15); }
+    h2 { font-size: 1.45rem; color: #67d1ff; border-bottom: 1px solid rgba(100,180,255,0.2); padding-bottom: 8px; margin-top: 56px; margin-bottom: 16px; }
+    h3 { font-size: 1.1rem; color: #a8d8f0; margin-top: 32px; margin-bottom: 8px; }
+    p { color: #c2daea; margin-bottom: 20px; }
+    ul { padding-left: 22px; color: #c2daea; }
+    ul li { margin-bottom: 6px; }
+    .chart { width: 100%; border-radius: 14px; border: 1px solid rgba(100,180,255,0.12); background: #0d1e2e; margin: 24px 0 10px; }
+    .caption { text-align: center; color: #6a9dbf; font-size: 0.88rem; margin-bottom: 32px; }
+    pre.code { background: #071018; border: 1px solid rgba(100,180,255,0.18); border-radius: 12px 12px 0 0; padding: 18px 20px; overflow-x: auto; font-size: 0.87rem; line-height: 1.7; color: #b8e0ff; margin: 16px 0 0; }
+    pre.output { background: #04100a; border: 1px solid rgba(100,180,255,0.1); border-top: none; border-radius: 0 0 12px 12px; padding: 14px 20px; overflow-x: auto; font-size: 0.84rem; line-height: 1.6; color: #7ef2b0; margin: 0 0 28px; }
+    .label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0; padding: 4px 0 0; }
+    .label.in { color: #67d1ff; }
+    .label.out { color: #7ef2b0; }
+    .stat-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 28px 0 40px; }
+    .stat { background: #0f2030; border: 1px solid rgba(100,180,255,0.15); border-radius: 14px; padding: 20px 16px; text-align: center; }
+    .stat .val { display: block; font-size: 1.9rem; font-weight: 800; color: #f7d58b; }
+    .stat .lbl { display: block; font-size: 0.82rem; color: #7ab3d4; margin-top: 4px; }
+    .contact-row { display: flex; gap: 24px; flex-wrap: wrap; margin-top: 16px; }
+    .contact-row a { color: #67d1ff; text-decoration: none; }
+    .contact-row a:hover { text-decoration: underline; }
+    footer { margin-top: 80px; border-top: 1px solid rgba(100,180,255,0.12); padding-top: 24px; color: #4a7a99; font-size: 0.88rem; text-align: center; }
+    @media (max-width: 600px) { .stat-row { grid-template-columns: repeat(2,1fr); } h1 { font-size: 1.8rem; } }
   </style>
 </head>
 <body>
 <div class="page">
 
   <h1>NYC 311 Service Requests Analysis</h1>
-  <p class="subtitle">A portfolio data analysis project by Siavash</p>
+  <p class="subtitle">A portfolio data analysis project by Siavash &mdash; NYC complaint patterns, agency response, and resolution behavior</p>
 
-  <img class="cover" src="visuals/image.jpg" alt="New York City skyline" />
+  <img class="cover" src="visuals/nyc-cover.jpg" alt="New York City skyline" />
 
-  <!-- Dataset Overview -->
   <h2>Dataset Overview</h2>
-  <p>
-    This project analyzes NYC 311 service request data to understand complaint patterns,
-    city-level demand, agency response, and resolution behavior. The dataset contains
-    111,069 rows and 14 columns covering complaints across all five boroughs of New York City.
-  </p>
+  <p>This project analyzes NYC 311 service request data covering complaints across all five boroughs of New York City. The raw dataset contains 111,069 rows and 14 columns.</p>
 
   <div class="stat-row">
     <div class="stat"><span class="val">111K</span><span class="lbl">Service requests</span></div>
@@ -181,24 +58,41 @@
     <div class="stat"><span class="val">50+</span><span class="lbl">Agencies</span></div>
   </div>
 
-  <p>Key columns used in the analysis:</p>
-  <ul>
-    <li>Complaint Type</li>
-    <li>Agency and Agency Name</li>
-    <li>Borough and City</li>
-    <li>Created Date and Closed Date</li>
-    <li>Status</li>
-  </ul>
+  <p class="label in">In [1]</p>
+  <pre class="code">import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
 
-  <!-- Data Audit -->
+df = pd.read_csv("data/311-service-requests.csv")
+print(f"Dataset shape: {df.shape}")
+print(f"\nColumn names and types:")
+print(df.dtypes)</pre>
+  <p class="label out">Out [1]</p>
+  <pre class="output">Dataset shape: (111069, 14)
+
+Column names and types:
+Unnamed: 0         int64
+Created Date      object
+Closed Date       object
+Agency            object
+Agency Name       object
+Complaint Type    object
+Descriptor        object
+Location Type     object
+Incident Zip      object
+Address Type      object
+City              object
+Landmark          object
+Status            object
+Borough           object</pre>
+
   <h2>Data Audit</h2>
-  <p>
-    Before analyzing the data, we audited its quality by checking for missing values,
-    duplicate records, and invalid date ranges.
-  </p>
+  <p>Before analyzing, we audited the dataset for missing values, duplicate records, and invalid date ranges.</p>
 
   <h3>Missing values</h3>
-  <pre>missing = df.isnull().sum()
+  <p class="label in">In [2]</p>
+  <pre class="code">missing = df.isnull().sum()
 missing_pct = (missing / len(df)) * 100
 
 missing_df = pd.DataFrame({
@@ -206,111 +100,272 @@ missing_df = pd.DataFrame({
     'Percentage': missing_pct
 }).sort_values('Missing Count', ascending=False)
 print(missing_df)</pre>
+  <p class="label out">Out [2]</p>
+  <pre class="output">                Missing Count  Percentage
+Landmark               110974   99.914468
+Closed Date             50799   45.736434
+Location Type           32047   28.853235
+Incident Zip            12262   11.039984
+City                    12215   10.997668
+Address Type             8822    7.942810
+Descriptor                456    0.410556
+Complaint Type              0    0.000000
+Agency                      0    0.000000
+Created Date                0    0.000000
+Agency Name                 0    0.000000
+Status                      0    0.000000
+Borough                     0    0.000000</pre>
 
-  <p>
-    The <strong style="color:#a8d8f0">Closed Date</strong> column had 50,799 missing values —
-    these represent open or unresolved complaints, not data errors.
-    The <strong style="color:#a8d8f0">Landmark</strong> column was ~99.9% missing and was dropped.
-  </p>
+  <h3>Duplicate rows</h3>
+  <p class="label in">In [3]</p>
+  <pre class="code">print(f"Total duplicate rows: {df.duplicated().sum()}")
+key_cols = ['created_date', 'complaint_type', 'agency', 'borough']
+print(f"Rows with duplicate key info: {df.duplicated(subset=key_cols).sum()}")
+print(f"\nDataset shape before cleaning: {df.shape}")</pre>
+  <p class="label out">Out [3]</p>
+  <pre class="output">Total duplicate rows: 0
+Rows with duplicate key info: 46606
 
-  <!-- Cleaning -->
-  <h2>Data Cleaning</h2>
-  <pre>df.columns = df.columns.str.strip().str.lower().str.replace(' ', '_')
+Dataset shape before cleaning: (111069, 14)</pre>
+
+  <h3>Date parsing and validation</h3>
+  <p class="label in">In [4]</p>
+  <pre class="code">df.columns = df.columns.str.strip().str.lower().str.replace(' ', '_')
 df['created_date'] = pd.to_datetime(df['created_date'], errors='coerce')
 df['closed_date'] = pd.to_datetime(df['closed_date'], errors='coerce')
 
-df['resolution_days'] = (df['closed_date'] - df['created_date']).dt.days
+print(f"created_date nulls: {df['created_date'].isnull().sum()}")
+print(f"closed_date nulls: {df['closed_date'].isnull().sum()}")
+print(f"\ncreated_date range: {df['created_date'].min()} to {df['created_date'].max()}")
+print(f"closed_date range: {df['closed_date'].min()} to {df['closed_date'].max()}")
+print(f"\nRows where closed_date &lt; created_date: {(df['closed_date'] &lt; df['created_date']).sum()}")</pre>
+  <p class="label out">Out [4]</p>
+  <pre class="output">created_date nulls: 0
+closed_date nulls: 50799
+
+created_date range: 2013-10-04 00:00:10 to 2013-10-31 02:08:41
+closed_date range: 1900-01-01 00:00:00 to 2013-10-31 03:00:20
+
+Rows where closed_date &lt; created_date: 2047 (1.84%)</pre>
+
+  <h3>Resolution time</h3>
+  <p class="label in">In [5]</p>
+  <pre class="code">df['resolution_days'] = (df['closed_date'] - df['created_date']).dt.days
+print(df['resolution_days'].describe())
+print(f"\nNegative resolution times: {(df['resolution_days'] &lt; 0).sum()} ({(df['resolution_days'] &lt; 0).mean()*100:.2f}%)")
+print(f"Open complaints: {df['closed_date'].isna().sum()} ({df['closed_date'].isna().mean()*100:.2f}%)")
+print(f"Closed complaints: {df['closed_date'].notna().sum()} ({df['closed_date'].notna().mean()*100:.2f}%)")</pre>
+  <p class="label out">Out [5]</p>
+  <pre class="output">count    60270.000000
+mean        -1.134478
+std        293.242808
+min     -41560.000000
+25%          0.000000
+50%          0.000000
+75%          2.000000
+max         26.000000
+
+Negative resolution times: 2047 (1.84%)
+Open complaints: 50799 (45.74%)
+Closed complaints: 60270 (54.26%)</pre>
+
+  <h2>Data Cleaning</h2>
+  <p class="label in">In [6]</p>
+  <pre class="code">df = df.drop('landmark', axis=1)
 df['has_bad_date'] = df['resolution_days'] &lt; 0
 df['is_open'] = df['closed_date'].isnull().astype(int)
-df = df.drop('landmark', axis=1)</pre>
+df.loc[df['has_bad_date'], 'closed_date'] = pd.NaT
 
-  <p>
-    Negative resolution times were flagged as bad data — these are rows where the
-    closed date was earlier than the created date, which is logically impossible.
-  </p>
+print(f"After dropping landmark: {len(df.columns)} columns")
+print(f"Rows with bad dates flagged: {df['has_bad_date'].sum()}")
+print(f"Open complaints flagged: {df['is_open'].sum()}")
+print(f"\nFinal shape: {df.shape}")</pre>
+  <p class="label out">Out [6]</p>
+  <pre class="output">After dropping landmark: 14 columns
+Rows with bad dates flagged: 2047
+Open complaints flagged: 50799
 
-  <!-- Feature Engineering -->
+Final shape: (111069, 16)</pre>
+
   <h2>Feature Engineering</h2>
-  <pre>df['created_month'] = df['created_date'].dt.month
+  <p class="label in">In [7]</p>
+  <pre class="code">df['created_month'] = df['created_date'].dt.month
 df['created_day_of_week'] = df['created_date'].dt.day_name()
 df['created_hour'] = df['created_date'].dt.hour
-df['is_weekend'] = df['created_day_of_week'].isin(['Saturday', 'Sunday']).astype(int)</pre>
+df['is_weekend'] = df['created_day_of_week'].isin(['Saturday', 'Sunday']).astype(int)
 
-  <p>
-    Time-based features were created to explore patterns by month, day of week, hour,
-    and whether complaints were filed on weekends.
-  </p>
+print(df[['created_month', 'created_day_of_week', 'created_hour', 'is_weekend']].head(10))
+print(f"\nMonths: {df['created_month'].nunique()}")
+print(f"Days of week: {df['created_day_of_week'].nunique()}")
+print(f"Hours: {df['created_hour'].nunique()}")</pre>
+  <p class="label out">Out [7]</p>
+  <pre class="output">   created_month created_day_of_week  created_hour  is_weekend
+0             10            Thursday             2           0
+1             10            Thursday             2           0
+2             10            Thursday             2           0
+3             10            Thursday             1           0
+4             10            Thursday             1           0
+5             10            Thursday             1           0
+6             10            Thursday             1           0
+7             10            Thursday             1           0
+8             10            Thursday             1           0
+9             10            Thursday             1           0
 
-  <!-- EDA -->
+Months: 1
+Days of week: 7
+Hours: 24</pre>
+
   <h2>Exploratory Data Analysis</h2>
 
   <h3>Top 10 complaint types</h3>
+  <p class="label in">In [8]</p>
+  <pre class="code">top_complaints = df['complaint_type'].value_counts().head(10)
+plt.figure(figsize=(10, 6))
+top_complaints.plot(kind='bar')
+plt.title('Top 10 Complaint Types')
+plt.xlabel('Complaint Type')
+plt.ylabel('Count')
+plt.xticks(rotation=45, ha='right')
+plt.tight_layout()
+plt.savefig("visuals/top_complaints.png", dpi=300, bbox_inches="tight")
+plt.show()</pre>
   <img class="chart" src="visuals/top_complaints.png" alt="Top complaint types" />
-  <p class="caption">Figure 1 — Top 10 complaint types by volume</p>
-  <p>A small number of complaint categories dominate the total volume. The top few types account for a disproportionately large share of all requests.</p>
+  <p class="caption">Figure 1 &mdash; Top 10 complaint types by volume</p>
+  <p>A small number of complaint categories dominate the total volume.</p>
 
   <h3>Complaints by borough</h3>
+  <p class="label in">In [9]</p>
+  <pre class="code">borough_counts = df['borough'].value_counts()
+plt.figure(figsize=(10, 6))
+borough_counts.plot(kind='bar', color='teal')
+plt.title('Complaint Count by Borough')
+plt.xlabel('Borough')
+plt.ylabel('Count')
+plt.xticks(rotation=45, ha='right')
+plt.tight_layout()
+plt.savefig("visuals/borough_complaints.png", dpi=300, bbox_inches="tight")
+plt.show()</pre>
   <img class="chart" src="visuals/borough_complaints.png" alt="Borough complaints" />
-  <p class="caption">Figure 2 — Complaint count by borough</p>
-  <p>Borough-level demand is highly concentrated. Some boroughs generate significantly more complaints than others, which has direct implications for resource allocation.</p>
+  <p class="caption">Figure 2 &mdash; Complaint count by borough</p>
+  <p>Borough-level demand is highly concentrated across the five NYC boroughs.</p>
 
   <h3>Agency workload</h3>
+  <p class="label in">In [10]</p>
+  <pre class="code">agency_counts = df['agency'].value_counts().head(10)
+plt.figure(figsize=(10, 6))
+agency_counts.plot(kind='bar', color='dodgerblue')
+plt.title('Top Agencies by Complaint Volume')
+plt.xlabel('Agency')
+plt.ylabel('Count')
+plt.xticks(rotation=45, ha='right')
+plt.tight_layout()
+plt.savefig("visuals/agency_complaints.png", dpi=300, bbox_inches="tight")
+plt.show()</pre>
   <img class="chart" src="visuals/agency_complaints.png" alt="Agency complaints" />
-  <p class="caption">Figure 3 — Top agencies by complaint volume</p>
-  <p>Agency workload is unevenly distributed. A few departments handle the majority of complaints while others deal with only a small share.</p>
+  <p class="caption">Figure 3 &mdash; Top agencies by complaint volume</p>
+  <p>A few departments handle the majority of all complaints in the city.</p>
 
   <h3>Open vs Closed complaints</h3>
+  <p class="label in">In [11]</p>
+  <pre class="code">open_closed = pd.Series({
+    'Open': df['closed_date'].isna().sum(),
+    'Closed': df['closed_date'].notna().sum()
+})
+plt.figure(figsize=(8, 6))
+open_closed.plot(kind='bar', color=['#f39c12', '#2ecc71'])
+plt.title('Open vs Closed Complaints')
+plt.xlabel('Status')
+plt.ylabel('Count')
+plt.tight_layout()
+plt.savefig("visuals/open_vs_closed.png", dpi=300, bbox_inches="tight")
+plt.show()</pre>
   <img class="chart" src="visuals/open_vs_closed.png" alt="Open vs closed" />
-  <p class="caption">Figure 4 — Open and closed complaint comparison</p>
-  <p>A meaningful share of complaints remain open. This matters for service planning and forecasting future demand.</p>
+  <p class="caption">Figure 4 &mdash; Open and closed complaint comparison</p>
+  <p>45.74% of complaints remain open with no closed date recorded.</p>
 
   <h3>Resolution time distribution</h3>
+  <p class="label in">In [12]</p>
+  <pre class="code">df[df['resolution_days'].notna()]['resolution_days'].plot(kind='hist', bins=30, color='purple')
+plt.figure(figsize=(10, 6))
+df[df['resolution_days'].notna()]['resolution_days'].plot(kind='hist', bins=30, color='purple')
+plt.title('Resolution Time Distribution')
+plt.xlabel('Resolution Days')
+plt.ylabel('Frequency')
+plt.tight_layout()
+plt.savefig("visuals/resolution_time_distribution.png", dpi=300, bbox_inches="tight")
+plt.show()</pre>
   <img class="chart" src="visuals/resolution_time_distribution.png" alt="Resolution time" />
-  <p class="caption">Figure 5 — Distribution of resolution time in days</p>
-  <p>Most complaints are resolved quickly, with the median resolution at 0 days and the 75th percentile at 2 days. However, a small subset takes much longer.</p>
+  <p class="caption">Figure 5 &mdash; Distribution of resolution time in days</p>
+  <p>Median resolution is 0 days. 75th percentile is 2 days. A small subset takes much longer.</p>
 
   <h3>Complaints by month</h3>
+  <p class="label in">In [13]</p>
+  <pre class="code">monthly_counts = df['created_month'].value_counts().sort_index()
+plt.figure(figsize=(10, 6))
+monthly_counts.plot(kind='bar', color='skyblue')
+plt.title('Complaints by Month')
+plt.xlabel('Month')
+plt.ylabel('Number of Complaints')
+plt.tight_layout()
+plt.savefig("visuals/complaints_by_month.png", dpi=300, bbox_inches="tight")
+plt.show()</pre>
   <img class="chart" src="visuals/complaints_by_month.png" alt="Complaints by month" />
-  <p class="caption">Figure 6 — Complaint volume by month</p>
+  <p class="caption">Figure 6 &mdash; Complaint volume by month</p>
 
   <h3>Complaints by day of week</h3>
+  <p class="label in">In [14]</p>
+  <pre class="code">day_order = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']
+day_counts = df['created_day_of_week'].value_counts().reindex(day_order, fill_value=0)
+plt.figure(figsize=(10, 6))
+day_counts.plot(kind='bar', color='orange')
+plt.title('Complaints by Day of Week')
+plt.xlabel('Day')
+plt.ylabel('Count')
+plt.tight_layout()
+plt.savefig("visuals/complaints_by_day.png", dpi=300, bbox_inches="tight")
+plt.show()</pre>
   <img class="chart" src="visuals/complaints_by_day.png" alt="Complaints by day" />
-  <p class="caption">Figure 7 — Complaint volume by day of week</p>
+  <p class="caption">Figure 7 &mdash; Complaint volume by day of week</p>
 
-  <h3>Complaint type heatmap by borough</h3>
+  <h3>Complaint heatmap by borough</h3>
+  <p class="label in">In [15]</p>
+  <pre class="code">pivot = pd.crosstab(df['borough'], df['complaint_type']).head(10)
+plt.figure(figsize=(12, 8))
+sns.heatmap(pivot, cmap='YlGnBu')
+plt.title('Complaint Type by Borough')
+plt.xticks(rotation=45, ha='right')
+plt.tight_layout()
+plt.savefig("visuals/borough_complaint_heatmap.png", dpi=300, bbox_inches="tight")
+plt.show()</pre>
   <img class="chart" src="visuals/borough_complaint_heatmap.png" alt="Borough heatmap" />
-  <p class="caption">Figure 8 — Complaint type concentration by borough</p>
+  <p class="caption">Figure 8 &mdash; Complaint type concentration by borough</p>
 
-  <!-- Key Findings -->
   <h2>Key Findings</h2>
   <ul>
-    <li>A small number of complaint types dominate the total volume</li>
+    <li>A small number of complaint types dominate total volume</li>
     <li>Agency workload is unevenly distributed across city departments</li>
     <li>Borough-level demand is highly concentrated</li>
-    <li>Most complaints are resolved quickly but a smaller set takes much longer</li>
-    <li>A meaningful share of complaints remain open</li>
+    <li>Most complaints are resolved in 0&ndash;2 days but a subset takes much longer</li>
+    <li>45.74% of complaints remain open with no closed date</li>
   </ul>
 
-  <!-- Recommendations -->
   <h2>Recommendations</h2>
-  <p>City resources should be prioritized toward:</p>
   <ul>
-    <li>Recurring complaint types with the highest volume</li>
-    <li>Agencies with the largest operational demand</li>
-    <li>Boroughs showing concentrated service pressure</li>
-    <li>Complaint categories with slower resolution times</li>
+    <li>Prioritize resources toward recurring high-volume complaint types</li>
+    <li>Address uneven agency workload distribution</li>
+    <li>Focus on boroughs with concentrated service pressure</li>
+    <li>Investigate complaint categories with slower resolution times</li>
   </ul>
 
-  <!-- Contact -->
   <h2>Contact</h2>
   <div class="contact-row">
     <a href="https://github.com/Siavashrko/NYC-311-Analysis">GitHub Repo</a>
-    <a href="https://www.instagram.com/siavash_rko?igsh=anBmcDQ2N3A5NGcz&utm_source=qr">instagram.com/siavash_rko</a>
+    <a href="https://www.instagram.com/siavash_rko">instagram.com/siavash_rko</a>
     <a href="https://x.com/Siavashrk33">x.com/Siavashrk33</a>
     <a href="mailto:siavashrko@gmail.com">siavashrko@gmail.com</a>
   </div>
 
-  <footer>NYC 311 Service Requests Analysis &bull; Portfolio data project</footer>
+  <footer>NYC 311 Service Requests Analysis &bull; Portfolio data project by Siavash</footer>
 
 </div>
 </body>
